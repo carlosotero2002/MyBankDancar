@@ -18,6 +18,7 @@ public class MyViewPagerAdapter extends FragmentStateAdapter {
     public MyViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
+
     /*
     @Override
     public SwipeDisabledViewPager(Context context) {
@@ -36,6 +37,7 @@ public class MyViewPagerAdapter extends FragmentStateAdapter {
         return false;
     }
     */
+
     @NonNull
     @Override
     public Fragment createFragment(int position) {
