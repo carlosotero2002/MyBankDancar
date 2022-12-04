@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         else
         {
-            db.rawQuery("INSERT INTO Usuarios(email,password) VALUES ('?','?') ",new String[] {"x","x"}).close();
+            db.rawQuery("INSERT INTO Usuarios(email,password) VALUES (?,?) ",new String[] {"x","x"}).close();
         }
         /* LISTENERS */
 
@@ -56,9 +56,10 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("email",emailText);
                 Log.d("pass",passwordText);
 
-                Cursor c = db.rawQuery("SELECT email, password FROM Usuarios Where usuario='?'", new String[] {emailText});
-                if (c.moveToFirst())
+                Cursor c = db.rawQuery("SELECT email, password FROM Usuarios Where usuario=?", new String[] {emailText});
+                if (c != null)
                 {
+                    c.moveToFirst();
                     String realPass = c.getString(1);
                     String realUser = c.getString(0);
 
