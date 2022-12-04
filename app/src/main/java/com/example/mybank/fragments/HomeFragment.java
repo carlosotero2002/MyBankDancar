@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
         balance = view.findViewById(R.id.balance);
         numeroCuenta = view.findViewById(R.id.cuenta);
 
-
+        userLogged = LoginActivity.loggedUser;
         SQLiteDatabase db = LoginActivity.db;
 
         Cursor c = db.rawQuery("SELECT * FROM Cuentas WHERE email = ?", new String[] {userLogged});

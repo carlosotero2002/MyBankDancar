@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView password;
     TextView email;
     Button submit;
-
+    public static String loggedUser;
     public static SQLiteDatabase db;
 
     @Override
@@ -71,12 +71,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     try
                     {
-                        String realPass = c.getString(c.getColumnIndex("password"));
-                        String realUser = c.getString(c.getColumnIndex("email"));
+                        String realPass = c.getString(1);
+                        String realUser = c.getString(0);
 
                         if (realPass.equals(passwordText) && realUser.equals(emailText))
                         {
                             Intent i = new Intent(c_main , MainActivity.class);
+                            loggedUser = realUser;
                             startActivity(i);
                             Log.d("Intent", i.toString());
                         }
