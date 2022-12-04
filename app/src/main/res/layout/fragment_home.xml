@@ -6,9 +6,41 @@
     tools:context=".fragments.HomeFragment">
 
     <TextView
+        android:id="@+id/cuenta_texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
         android:layout_centerInParent="true"
-        android:textSize="32dp"/>
+        android:text="Numero de cuenta"
+        android:textColor="#070000"
+        android:textSize="32dp" />
+
+    <TextView
+        android:id="@+id/cuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cuenta_texto"
+        android:layout_centerInParent="true"
+        android:text="4440 5550 6660 3332"
+        android:textColor="#673AB7"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/balance_texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cuenta"
+        android:layout_centerInParent="true"
+        android:text="Balance"
+        android:textColor="#000000"
+        android:textSize="32dp" />
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balance_texto"
+        android:layout_centerInParent="true"
+        android:text="$2250.32"
+        android:textColor="#4CAF50"
+        android:textSize="24sp" />
 </RelativeLayout>

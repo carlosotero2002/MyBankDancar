@@ -15,6 +15,7 @@ public class UsuariosSQLiteHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db)
     {
         db.execSQL("CREATE TABLE Usuarios (email TEXT, password TEXT);");
+        db.execSQL("CREATE TABLE Cuentas (email TEXT, num_cuenta TEXT, balance TEXT);");
         /* db.execSQL("INSERT INTO Usuarios(email,password) VALUES ('x','x'); "); */
     }
     @Override
@@ -22,5 +23,8 @@ public class UsuariosSQLiteHelper extends SQLiteOpenHelper
     {
         db.execSQL("DROP TABLE IF EXISTS Usuarios");
         db.execSQL("CREATE TABLE Usuarios (email TEXT, password TEXT)");
+
+        db.execSQL("DROP TABLE IF EXISTS Cuentas");
+        db.execSQL("CREATE TABLE Cuentas (email TEXT, num_cuenta TEXT, balance TEXT);");
     }
 }

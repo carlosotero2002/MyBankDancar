@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView email;
     Button submit;
 
-
+    public static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,13 +31,18 @@ public class LoginActivity extends AppCompatActivity {
         /* DATABASE CREATION */
 
         UsuariosSQLiteHelper usdbh = new UsuariosSQLiteHelper(this, "db_usuarios",null,1);
-        SQLiteDatabase db = usdbh.getWritableDatabase();
+        db = usdbh.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put("email","x");
-        values.put("password","x");
+        values.put("email","admin@admin.com");
+        values.put("password","admin");
         db.insert("Usuarios",null,values);
 
+        values = new ContentValues();
+        values.put("email","admin@admin.com");
+        values.put("num_cuenta","4456 6845 1235 3740");
+        values.put("balance", "2550.35");
+        db.insert("Cuentas",null,values);
         /* LISTENERS */
 
         submit = findViewById(R.id.submit);
