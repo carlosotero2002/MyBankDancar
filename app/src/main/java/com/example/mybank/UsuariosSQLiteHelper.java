@@ -1,5 +1,6 @@
 package com.example.mybank;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,7 +14,8 @@ public class UsuariosSQLiteHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("CREATE TABLE Usuarios (email TEXT, password TEXT)");
+        db.execSQL("CREATE TABLE Usuarios (email TEXT, password TEXT);");
+        /* db.execSQL("INSERT INTO Usuarios(email,password) VALUES ('x','x'); "); */
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAnterior, int versionNueva)

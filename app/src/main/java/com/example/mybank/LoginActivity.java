@@ -2,6 +2,7 @@ package com.example.mybank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -31,14 +32,12 @@ public class LoginActivity extends AppCompatActivity {
 
         UsuariosSQLiteHelper usdbh = new UsuariosSQLiteHelper(this, "db_usuarios",null,1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
-        if (db == null)
-        {
-            Log.d("Database","Not created");
-        }
-        else
-        {
-            db.rawQuery("INSERT INTO Usuarios(email,password) VALUES (?,?) ",new String[] {"x","x"}).close();
-        }
+
+        ContentValues values = new ContentValues();
+        values.put("email","x");
+        values.put("password","x");
+        db.insert("Usuarios",null,values);
+
         /* LISTENERS */
 
         submit = findViewById(R.id.submit);
@@ -46,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.pass);
 
         Context c_main = this;
+
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,19 +57,32 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("email",emailText);
                 Log.d("pass",passwordText);
 
-                Cursor c = db.rawQuery("SELECT email, password FROM Usuarios Where usuario=?", new String[] {emailText});
+                Cursor c = db.rawQuery("SELECT * FROM Usuarios Where email=?", new String[] {emailText});
+
                 if (c != null)
                 {
                     c.moveToFirst();
-                    String realPass = c.getString(1);
-                    String realUser = c.getString(0);
+                    Log.d("Cursor", String.valueOf(c.getPosition()));
 
-                    if (realPass.equals(passwordText) && realUser.equals(emailText))
+                    try
                     {
-                        Intent i = new Intent(c_main , MainActivity.class);
-                        startActivity(i);
-                        Log.d("Intent", i.toString());
+                        String realPass = c.getString(c.getColumnIndex("password"));
+                        String realUser = c.getString(c.getColumnIndex("email"));
+
+                        if (realPass.equals(passwordText) && realUser.equals(emailText))
+                        {
+                            Intent i = new Intent(c_main , MainActivity.class);
+                            startActivity(i);
+                            Log.d("Intent", i.toString());
+                        }
                     }
+                    catch (Exception e)
+                    {
+                        Log.d("Exception",e.toString());
+                        c.close();
+                    }
+
+
                 }
 
             }
