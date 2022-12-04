@@ -16,7 +16,11 @@ public class UsuariosSQLiteHelper extends SQLiteOpenHelper
     {
         db.execSQL("CREATE TABLE Usuarios (email TEXT, password TEXT);");
         db.execSQL("CREATE TABLE Cuentas (email TEXT, num_cuenta TEXT, balance TEXT);");
-        /* db.execSQL("INSERT INTO Usuarios(email,password) VALUES ('x','x'); "); */
+
+        // Motivo puede ser hipoteca o payroll
+        db.execSQL("CREATE TABLE Transacciones (email_origen TEXT, email_destino TEXT, banco TEXT ,cantidad TEXT, motivo TEXT)");
+
+
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAnterior, int versionNueva)

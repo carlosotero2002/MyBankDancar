@@ -43,6 +43,15 @@ public class LoginActivity extends AppCompatActivity {
         values.put("num_cuenta","4456 6845 1235 3740");
         values.put("balance", "2550.35");
         db.insert("Cuentas",null,values);
+
+        // Transacciones de prueba.
+        values = new ContentValues();
+        values.put("email_origen","admin@admin.com");
+        values.put("email_destino","tacos@live.com");
+        values.put("banco","SCOTIABANK");
+        values.put("cantidad","50");
+        values.put("motivo","Compra");
+        db.insert("Transacciones",null,values);
         /* LISTENERS */
 
         submit = findViewById(R.id.submit);
