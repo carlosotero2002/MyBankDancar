@@ -14,41 +14,42 @@
             android:id="@+id/transaccion_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:editable="false"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="32dp" />
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/transaccion_table2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="32dp" />
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/transaccion_table3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="32dp" />
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/transaccion_table4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="32dp" />
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/transaccion_table5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="32dp" />
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
     </LinearLayout>
 
 </RelativeLayout>

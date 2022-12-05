@@ -44,13 +44,13 @@ public class TransferFragment extends Fragment {
             int i = 0;
             while(c.moveToPosition(i))
             {
-                String origen = c.getString(0);
+                String origen = c.getString(0) ;
                 String destino = c.getString(1);
-                String banco = c.getString(2);
+                String banco = c.getString(2) ;
                 String cantidad = c.getString(3);
-                String motivo = c.getString(4);
+                String motivo = c.getString(4) + "\n\n\n";
 
-                table1 +=  origen;
+                table1 +=  origen + destino + banco + cantidad + motivo ;
                 table2 +=  destino;
                 table3 +=  banco;
                 table4 +=  cantidad;
@@ -63,10 +63,10 @@ public class TransferFragment extends Fragment {
             TextView t4 = view.findViewById(R.id.transaccion_table4);
             TextView t5 = view.findViewById(R.id.transaccion_table5);
             t1.setText(table1);
-            t2.setText(table2);
-            t3.setText(table3);
-            t4.setText(table4);
-            t5.setText(table5);
+            //t2.setText(table2);
+            //t3.setText(table3);
+            //t4.setText(table4);
+            //t5.setText(table5);
 
         }
 
