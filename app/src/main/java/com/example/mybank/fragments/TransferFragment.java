@@ -37,7 +37,8 @@ public class TransferFragment extends Fragment {
         String table = "";
         if (c != null)
         {
-            while(c.moveToFirst())
+            int i = 0;
+            while(c.moveToPosition(i))
             {
                 String origen = c.getString(0);
                 String destino = c.getString(1);
@@ -46,6 +47,7 @@ public class TransferFragment extends Fragment {
                 String motivo = c.getString(4);
 
                 table += "|" + origen + "|" + destino + "|" + banco + "|" + cantidad + "|" + motivo + "\n";
+                i++;
             }
             TextView t = view.findViewById(R.id.transaccion_table);
             t.setText(table);
