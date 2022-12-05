@@ -46,7 +46,7 @@ public class TransferFragment extends Fragment {
                 String cantidad = c.getString(3);
                 String motivo = c.getString(4);
 
-                table += "|" + origen + "|" + destino + "|" + banco + "|" + cantidad + "|" + motivo + "\n";
+                table += "\n" + origen + "\n" + destino + System.getProperty("line.separator") + banco + System.getProperty("line.separator") + cantidad + System.getProperty("line.separator") + motivo + System.getProperty("line.separator");
                 i++;
             }
             TextView t = view.findViewById(R.id.transaccion_table);
