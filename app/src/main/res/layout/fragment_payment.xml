@@ -6,7 +6,7 @@
     tools:context=".fragments.PaymentFragment">
 
     <EditText
-        android:id="@+id/textViewPa"
+        android:id="@+id/payment_table"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:ems="10"
