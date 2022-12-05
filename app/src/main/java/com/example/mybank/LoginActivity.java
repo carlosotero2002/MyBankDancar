@@ -82,11 +82,11 @@ public class LoginActivity extends AppCompatActivity {
         db.insert("Transacciones",null,values);
 
         values = new ContentValues();
-        values.put("email_origen","admin@admin.com");
-        values.put("email_destino","MySQL@live.com");
+        values.put("email_origen","MySQL@live.com");
+        values.put("email_destino","admin@admin.com");
         values.put("banco","BBVA");
         values.put("cantidad","420");
-        values.put("motivo","Compra");
+        values.put("motivo","HIPOTECA");
         db.insert("Transacciones",null,values);
 
         values = new ContentValues();
