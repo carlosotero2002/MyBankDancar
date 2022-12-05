@@ -34,7 +34,11 @@ public class TransferFragment extends Fragment {
         SQLiteDatabase db = LoginActivity.db;
         Cursor c = db.rawQuery("SELECT * FROM Transacciones Where email_origen=? OR email_destino=?", new String[] {LoginActivity.loggedUser,LoginActivity.loggedUser});
 
-        String table = "";
+        String table1 = "";
+        String table2 = "";
+        String table3 = "";
+        String table4 = "";
+        String table5 = "";
         if (c != null)
         {
             int i = 0;
@@ -46,11 +50,23 @@ public class TransferFragment extends Fragment {
                 String cantidad = c.getString(3);
                 String motivo = c.getString(4);
 
-                table += "\n" + origen + "\n" + destino + System.getProperty("line.separator") + banco + System.getProperty("line.separator") + cantidad + System.getProperty("line.separator") + motivo + System.getProperty("line.separator");
+                table1 +=  origen;
+                table2 +=  destino;
+                table3 +=  banco;
+                table4 +=  cantidad;
+                table5 +=  motivo;
                 i++;
             }
-            TextView t = view.findViewById(R.id.transaccion_table);
-            t.setText(table);
+            TextView t1 = view.findViewById(R.id.transaccion_table);
+            TextView t2 = view.findViewById(R.id.transaccion_table2);
+            TextView t3 = view.findViewById(R.id.transaccion_table3);
+            TextView t4 = view.findViewById(R.id.transaccion_table4);
+            TextView t5 = view.findViewById(R.id.transaccion_table5);
+            t1.setText(table1);
+            t2.setText(table2);
+            t3.setText(table3);
+            t4.setText(table4);
+            t5.setText(table5);
 
         }
 
