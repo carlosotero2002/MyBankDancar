@@ -44,6 +44,18 @@ public class LoginActivity extends AppCompatActivity {
         values.put("balance", "2550.35");
         db.insert("Cuentas",null,values);
 
+        values = new ContentValues();
+        values.put("email","admin@admin.com");
+        values.put("num_cuenta","2422 7745 3255 3760");
+        values.put("balance", "0.35");
+        db.insert("Cuentas",null,values);
+
+        values = new ContentValues();
+        values.put("email","admin@admin.com");
+        values.put("num_cuenta","4322 6645 1234 3112");
+        values.put("balance", "25.00");
+        db.insert("Cuentas",null,values);
+
         // Transacciones de prueba.
         values = new ContentValues();
         values.put("email_origen","admin@admin.com");
@@ -52,6 +64,48 @@ public class LoginActivity extends AppCompatActivity {
         values.put("cantidad","50");
         values.put("motivo","Compra");
         db.insert("Transacciones",null,values);
+
+        values = new ContentValues();
+        values.put("email_origen","admin@admin.com");
+        values.put("email_destino","Pampas@live.com");
+        values.put("banco","BBVA");
+        values.put("cantidad","385");
+        values.put("motivo","Compra");
+        db.insert("Transacciones",null,values);
+
+        values = new ContentValues();
+        values.put("email_origen","admin@admin.com");
+        values.put("email_destino","Cisco@live.com");
+        values.put("banco","SCOTIABANK");
+        values.put("cantidad","665");
+        values.put("motivo","Venta");
+        db.insert("Transacciones",null,values);
+
+        values = new ContentValues();
+        values.put("email_origen","admin@admin.com");
+        values.put("email_destino","MySQL@live.com");
+        values.put("banco","BBVA");
+        values.put("cantidad","420");
+        values.put("motivo","Compra");
+        db.insert("Transacciones",null,values);
+
+        values = new ContentValues();
+        values.put("email_origen","admin@admin.com");
+        values.put("email_destino","Extraordinario@live.com");
+        values.put("banco","BANCOMER");
+        values.put("cantidad","1");
+        values.put("motivo","Venta");
+        db.insert("Transacciones",null,values);
+
+        values = new ContentValues();
+        values.put("email_origen","admin@admin.com");
+        values.put("email_destino","Party@live.com");
+        values.put("banco","SANTANDER");
+        values.put("cantidad","500000");
+        values.put("motivo","Compra");
+        db.insert("Transacciones",null,values);
+
+
         /* LISTENERS */
 
         submit = findViewById(R.id.submit);
